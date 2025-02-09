@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:quran_app/core/common/utils/app_images.dart';
+import 'package:quran_app/features/home/presentation/screens/home_screen.dart';
+
 class DrawerScreen extends StatelessWidget {
   const DrawerScreen({super.key});
 
@@ -9,7 +11,7 @@ class DrawerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ZoomDrawer(
         menuScreen: MenuScreen(),
-        mainScreen: context.widget,
+        mainScreen: HomeScreen(),
         borderRadius: 30,
         showShadow: true,
         angle: -2,

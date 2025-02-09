@@ -206,7 +206,8 @@ class _SurahDetailsScreenState extends State<SurahDetailsScreen> {
                         child: CupertinoActivityIndicator(),
                       );
                     }
-                    if (homeProvider.allSurahDetails?.data == null) {
+                    if (homeProvider.allSurahDetails?.data == null ||
+                        homeProvider.allAyahsTranslate?.data == null) {
                       Center(
                         child: TextWidget(
                             text: "Malumot Topilmadi", fontSize: 16.sp),
@@ -277,7 +278,8 @@ class _SurahDetailsScreenState extends State<SurahDetailsScreen> {
                                               IconButton(
                                                   onPressed: () {
                                                     playAyahAudio(
-                                                        ayah?.audio ?? "",
+                                                        ayah?.audio ??
+                                                            "default_audio_url",
                                                         index);
                                                   },
                                                   icon: Icon(
@@ -326,8 +328,9 @@ class _SurahDetailsScreenState extends State<SurahDetailsScreen> {
                                         ),
                                       ),
                                       // TextWidget(
-                                      //   text:
-                                      //       ayah.,
+                                      //   text: homeProvider.allAyahsTranslate!
+                                      //       .data!.surahs![2].ayahs![2].text
+                                      //       .toString(),
                                       //   fontSize: 16.sp,
                                       //   textAlign: TextAlign.left,
                                       //   letterSpacing: 2,

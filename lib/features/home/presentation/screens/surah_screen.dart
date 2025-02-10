@@ -119,7 +119,9 @@ class _SurahScreenState extends State<SurahScreen> {
                         builder: (context, homeProvider, child) {
                           if (homeProvider.isloading) {
                             return Center(
-                              child: CupertinoActivityIndicator(),
+                              child: CupertinoActivityIndicator(
+                                color: Colors.white,
+                              ),
                             );
                           }
                           if (homeProvider.allSurah?.data?.isEmpty ?? true) {
@@ -129,8 +131,8 @@ class _SurahScreenState extends State<SurahScreen> {
                           }
                           return Center(
                               child: ListView.builder(
-                            // keyboardDismissBehavior:
-                            //     ScrollViewKeyboardDismissBehavior.onDrag,
+                            keyboardDismissBehavior:
+                                ScrollViewKeyboardDismissBehavior.onDrag,
                             physics: BouncingScrollPhysics(),
                             itemCount: homeProvider.filteredSurah?.length ?? 0,
                             itemBuilder: (context, index) {

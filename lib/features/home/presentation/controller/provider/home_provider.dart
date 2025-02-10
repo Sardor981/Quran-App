@@ -64,7 +64,7 @@ class HomeProvider extends ChangeNotifier {
       (l) => message = l,
       (r) => allAyahsTranslate = r,
     );
-    log(allAyahsTranslate!.data.toString());
+    log("${allAyahsTranslate!.data.toString()} result");
     isloading = false;
     notifyListeners();
   }

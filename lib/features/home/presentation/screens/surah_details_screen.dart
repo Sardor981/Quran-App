@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +28,8 @@ class _SurahDetailsScreenState extends State<SurahDetailsScreen> {
   void initState() {
     super.initState();
     final homeProvider = getIt<HomeProvider>()
-      ..getSurahDetails(surahId: widget.surahId);
+      ..getSurahDetails(surahId: widget.surahId)
+      ..getAyahsTranslate();
 
     player.onPlayerStateChanged.listen((PlayerState state) {
       if (state == PlayerState.completed || state == PlayerState.stopped) {
@@ -60,6 +63,8 @@ class _SurahDetailsScreenState extends State<SurahDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    log(widget.surahId.toString());
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -327,15 +332,25 @@ class _SurahDetailsScreenState extends State<SurahDetailsScreen> {
                                           textAlign: TextAlign.right,
                                         ),
                                       ),
-                                      // TextWidget(
-                                      //   text: homeProvider.allAyahsTranslate!
-                                      //       .data!.surahs![2].ayahs![2].text
-                                      //       .toString(),
-                                      //   fontSize: 16.sp,
-                                      //   textAlign: TextAlign.left,
-                                      //   letterSpacing: 2,
-                                      //   maxLines: 3,
-                                      // ),
+                                      homeProvider.isloading
+                                          ? CupertinoActivityIndicator(
+                                              color: Colors.white,
+                                            )
+                                          : Text(
+                                              homeProvider
+                                                  .allAyahsTranslate!
+                                                  .data!
+                                                  .surahs![widget.surahId - 1]
+                                                  .ayahs![index]
+                                                  .text
+                                                  .toString(),
+                                              textAlign: TextAlign.right,
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 16.sp,
+                                                letterSpacing: 2,
+                                              ),
+                                            ),
                                       Divider(
                                         thickness: 0,
                                       )

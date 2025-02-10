@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:quran_app/core/common/utils/app_images.dart';
+import 'package:quran_app/features/auth/service/auth_service.dart';
 import 'package:quran_app/features/home/presentation/screens/home_screen.dart';
 
 class DrawerScreen extends StatelessWidget {
@@ -28,6 +29,7 @@ class MenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AuthService authService = AuthService();
     return Scaffold(
       backgroundColor: Color(0xff5E17EB).withOpacity(0.8),
       body: SafeArea(
@@ -99,6 +101,9 @@ class MenuScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 16.sp)),
               ),
               ListTile(
+                onTap: () async {
+                  await authService.signout(context);
+                },
                 leading: const Icon(Icons.logout_rounded, color: Colors.white),
                 title: Text('Chiqish',
                     style: TextStyle(color: Colors.white, fontSize: 16.sp)),

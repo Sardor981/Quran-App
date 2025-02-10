@@ -53,7 +53,9 @@ class HomeRemoteDatasourceImpl implements HomeRemoteDatasource {
   @override
   Future<AyahTranslateModel?> getAyahs() async {
     try {
+      log("start ayah");
       final response = await dio.get(NetworkConstants.allAyahsUrl);
+      log(response.data.toString());
       if (response.statusCode == 200) {
         final result = response.data;
         log(result.toString());

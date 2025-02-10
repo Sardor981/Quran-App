@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "424524528341",
+    "project_id": "sardor-auth-f3cd4",
+    "storage_bucket": "sardor-auth-f3cd4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424524528341:android:f902075062c96e902c805c",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_with_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUbYU-79JhpAdqAKfO0hsSt9UzAwMXqeg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424524528341:android:716874269e0290e22c805c",
+        "android_client_info": {
+          "package_name": "com.example.quran_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUbYU-79JhpAdqAKfO0hsSt9UzAwMXqeg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

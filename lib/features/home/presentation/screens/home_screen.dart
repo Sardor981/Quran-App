@@ -5,7 +5,7 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:quran_app/core/common/injections.dart';
 import 'package:quran_app/core/common/utils/app_images.dart';
 import 'package:quran_app/features/home/presentation/controller/provider/home_provider.dart';
-import 'package:quran_app/features/home/presentation/screens/utils/sections_list.dart';
+import 'package:quran_app/features/home/presentation/utils/sections_list.dart';
 import 'package:quran_app/features/home/presentation/widgets/grid_widgets.dart';
 import 'package:quran_app/features/home/presentation/widgets/home_main_widget.dart';
 

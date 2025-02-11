@@ -332,25 +332,25 @@ class _SurahDetailsScreenState extends State<SurahDetailsScreen> {
                                           textAlign: TextAlign.right,
                                         ),
                                       ),
-                                      homeProvider.isloading
-                                          ? CupertinoActivityIndicator(
-                                              color: Colors.white,
-                                            )
-                                          : Text(
-                                              homeProvider
-                                                  .allAyahsTranslate!
-                                                  .data!
-                                                  .surahs![widget.surahId - 1]
-                                                  .ayahs![index]
-                                                  .text
-                                                  .toString(),
-                                              textAlign: TextAlign.right,
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 16.sp,
-                                                letterSpacing: 2,
-                                              ),
-                                            ),
+                                      if (homeProvider.isloading)
+                                        CupertinoActivityIndicator(
+                                          color: Colors.white,
+                                        )
+                                      else
+                                        Text(                                          homeProvider
+                                              .allAyahsTranslate!
+                                              .data!
+                                              .surahs![widget.surahId - 1]
+                                              .ayahs![index]
+                                              .text
+                                              .toString(),
+                                          textAlign: TextAlign.right,
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 16.sp,
+                                            letterSpacing: 2,
+                                          ),
+                                        ),
                                       Divider(
                                         thickness: 0,
                                       )
@@ -360,7 +360,7 @@ class _SurahDetailsScreenState extends State<SurahDetailsScreen> {
                               ],
                             ),
                           ),
-                        ); //tugashi
+                        ); 
                       },
                     );
                   },

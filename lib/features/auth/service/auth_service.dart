@@ -23,8 +23,9 @@ class AuthService {
   }) async {
     try {
       await auth.signInWithEmailAndPassword(email: email, password: password);
-      await saveUserToken(); 
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+      await saveUserToken();
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (_) => HomeScreen()));
     } on FirebaseAuthException catch (e) {
       showError(e);
     }
@@ -36,9 +37,11 @@ class AuthService {
     required BuildContext context,
   }) async {
     try {
-      await auth.createUserWithEmailAndPassword(email: email, password: password);
+      await auth.createUserWithEmailAndPassword(
+          email: email, password: password);
       await saveUserToken();
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (_) => HomeScreen()));
     } on FirebaseAuthException catch (e) {
       showError(e);
     }
@@ -47,10 +50,10 @@ class AuthService {
   Future<void> signout(BuildContext context) async {
     await auth.signOut();
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.remove("userToken"); 
+    await prefs.remove("userToken");
     Navigator.pushAndRemoveUntil(
       context,
-      MaterialPageRoute(builder: (_) => LoginScreen()), 
+      MaterialPageRoute(builder: (_) => LoginScreen()),
       (route) => false,
     );
     Fluttertoast.showToast(

@@ -70,7 +70,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: Column(
             children: [
-              // Row_widget(),
               Stack(
                 children: [
                   Column(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/core/common/utils/app_images.dart';
+import 'package:quran_app/features/home/presentation/controller/provider/home_provider.dart';
 import 'package:quran_app/features/home/presentation/screens/drawer_screen.dart';
 
 class SplashScreen extends StatefulWidget {
